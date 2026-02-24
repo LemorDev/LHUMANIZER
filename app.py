@@ -1,7 +1,6 @@
 import os
 import streamlit as st
-from dotenv import load_dotenv
-from rewriter import humanize_text # Imports your existing Groq logic
+from humanizer import humanize_text# Imports your existing Groq logic
 
 # Load your Groq key
 try:
