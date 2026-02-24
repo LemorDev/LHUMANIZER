@@ -1,6 +1,6 @@
 import os
 import streamlit as st
-from humanizer import humanize_text# Imports your existing Groq logic
+from rewriter import humanize_text# Imports your existing Groq logic
 
 # Load your Groq key
 try:
