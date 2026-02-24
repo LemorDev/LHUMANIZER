@@ -4,8 +4,10 @@ from dotenv import load_dotenv
 from rewriter import humanize_text # Imports your existing Groq logic
 
 # Load your Groq key
-load_dotenv()
-LLM_KEY = os.getenv("GROQ_API_KEY")
+try:
+    LLM_KEY = st.secrets["GROQ_API_KEY"]
+except (KeyError, FileNotFoundError):
+    LLM_KEY = os.getenv("GROQ_API_KEY")
 
 # --- WEB PAGE CONFIGURATION ---
 st.set_page_config(page_title="AI Humanizer", page_icon="📝", layout="centered")
