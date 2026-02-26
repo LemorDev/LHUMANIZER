@@ -1,16 +1,15 @@
 import os
 import streamlit as st
-from rewriter import humanize_text# Imports your existing Groq logic
+from rewriter import humanize_text 
 
-# Load your Groq key
+# --- Fetch API Key from Streamlit Secrets ---
 try:
-    LLM_KEY = st.secrets["GROQ_API_KEY"]
+    LLM_KEY = st.secrets["OPENAI_API_KEY"]
 except (KeyError, FileNotFoundError):
-    LLM_KEY = os.getenv("GROQ_API_KEY")
+    LLM_KEY = os.getenv("OPENAI_API_KEY")
 
 # --- WEB PAGE CONFIGURATION ---
 st.set_page_config(page_title="AI Humanizer", page_icon="📝", layout="centered")
-
 st.title("Academic AI Humanizer")
 st.markdown("Bypass AI detectors by transforming robotic drafts into natural, human-written academic prose. Perfect for capstone and thesis documentation.")
 st.markdown("Made by: Lemor")
